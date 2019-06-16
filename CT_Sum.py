@@ -50,7 +50,9 @@ for val in range(0,bandgap_length-1):
         HOMO=float(energy[val])
         LUMO=float(energy[val+1])
 bandgap_energy=LUMO-HOMO
-#Print bandgap energy and title for CT States list
+#Print HOMO, LUMO, bandgap energy, and title for CT States list
+print(F'HOMO = {HOMO}')
+print(F'LUMO = {LUMO}')
 print(F'Bandgap Energy = {bandgap_energy:.3f}')
 print("CT States")
 #Loop through data again to search for percentage contribution and turn percents into floats
