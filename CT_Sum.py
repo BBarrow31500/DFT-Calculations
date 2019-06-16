@@ -2,6 +2,7 @@ import os
 import numpy as np
 import sys
 data_input=sys.argv[1]
+limit_ext=sys.argv[2]
 #Open .out file and read lines
 data_file=os.path.join('Ag', 'DFT', data_input)
 data=open(data_file)
@@ -102,7 +103,7 @@ for level, lin in enumerate(contributions):
         level_array_80.append(level)
 #Impose limit on contribution array
 contribution_start=level_array_20[0]
-contribution_end=level_array_80[0]
+contribution_end=level_array_80[int(limit_ext)]
 #Remove any energies where the molecule does not contribute
 for n in range(contribution_start,contribution_end+1):
     lin_split=contributions[n].split()
